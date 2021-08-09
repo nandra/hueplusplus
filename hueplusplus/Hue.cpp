@@ -247,7 +247,7 @@ HueLight& Hue::getLight(int id)
         return lights.find(id)->second;
     }
     else if (type == "LCT010" || type == "LCT011" || type == "LCT012" || type == "LCT014" || type == "LCT015"
-        || type == "LCT016" || type == "LLC020" || type == "LST002")
+        || type == "LCT016" || type == "LLC020" || type == "LST002" || type == "LCL001")
     {
         // HueExtendedColorLight Gamut C
         HueLight light = HueLight(
@@ -266,7 +266,7 @@ HueLight& Hue::getLight(int id)
         return lights.find(id)->second;
     }
     else if (type == "LWB004" || type == "LWB006" || type == "LWB007" || type == "LWB010" || type == "LWB014"
-        || type == "LDF001" || type == "LDF002" || type == "LDD001" || type == "LDD002" || type == "MWM001")
+        || type == "LDF001" || type == "LDF002" || type == "LDD001" || type == "LDD002" || type == "MWM001" || type == "LWA001")
     {
         // HueDimmableLight No Color Type
         HueLight light = HueLight(id, commands, simpleBrightnessStrategy, nullptr, nullptr);
@@ -392,7 +392,7 @@ std::string Hue::getPictureOfModel(const std::string& model_id) const
     {
         ret.append("gu10_perfectfit");
     }
-    else if (model_id == "LST001" || model_id == "LST002")
+    else if (model_id == "LST001" || model_id == "LST002" || model_id == "LCL001")
     {
         ret.append("lightstrip");
     }
